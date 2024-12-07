@@ -1,0 +1,52 @@
+---
+import { Text, Image } from "@components/index"
+
+interface Props {
+	text?: string
+	author?: string
+	authorThumbnail?: {
+		src: ImageMetadata
+		alt: string
+	}
+	rating?: number
+	class?: string
+}
+
+const { text, author, authorThumbnail, rating, class: className } = Astro.props
+
+const maxRating = 5
+const ratingArray = Array.from({ length: maxRating }, (_, i) => i < rating)
+---
+
+<article class:list={["c-review-card", className]}>
+	{text && <Text class="typo-quote" text={text} />}
+
+	<div class="c-review-card__info">
+		<Image
+			src={authorThumbnail.src}
+			alt={authorThumbnail.alt}
+			class="c-picture--cover"
+			sizes="200px"
+		/>
+
+		<div class="c-review-card__rating">
+			<Text class="typo-body-medium" text={author} />
+
+			<div class="c-review-card__rating-stars">
+				{
+					ratingArray.map((rating) => (
+						<div
+							class:list={[
+								"c-review-card__rating-star",
+								{
+									"c-review-card__rating-star--subtle":
+										!rating
+								}
+							]}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</article>

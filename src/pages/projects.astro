@@ -1,0 +1,29 @@
+---
+import { DefaultLayout } from "@layouts/index"
+import { content } from "@cms/pages/projects"
+
+import { Hero, CallToActionSplit, ProjectGallery } from "@blocks/body/index"
+import { Container } from "@components/index"
+---
+
+<DefaultLayout
+	title="Homepage"
+	description="This is the homepage"
+	class="projects"
+>
+	<Container>
+		<Hero class="hero--align-left" title={content.hero.title} />
+	</Container>
+
+	<Container class="c-container--full">
+		<ProjectGallery gallery={content.gallery} />
+	</Container>
+
+	<Container>
+		<CallToActionSplit
+			title={content.callToActionSplit.title}
+			image={content.callToActionSplit.image}
+			buttons={content.callToActionSplit.buttons}
+		/>
+	</Container>
+</DefaultLayout>

@@ -1,0 +1,49 @@
+---
+import { Text, Title, Image, FaqList } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		highlight?: number[]
+		line: boolean
+	}
+	image?: {
+		src: ImageMetadata
+		alt: string
+	}
+	faq?: {
+		question: string
+		awnser: string
+	}[]
+}
+
+const { class: className, title, image, faq } = Astro.props
+---
+
+<section class:list={["faq", className]}>
+	<div class="faq__left">
+		<Image
+			src={image.src}
+			alt={image.alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+			shape={{
+				x: "left",
+				y: "bottom"
+			}}
+		/>
+	</div>
+
+	<div class="faq__right">
+		<Title
+			Tag="h2"
+			class="typo-h1"
+			text={title.text}
+			line={title.line}
+			highlight={[6]}
+		/>
+
+		<FaqList faq={faq} />
+	</div>
+</section>

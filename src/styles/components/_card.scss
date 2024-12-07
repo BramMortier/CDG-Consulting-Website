@@ -1,0 +1,11 @@
+.c-card {
+	--card-bg: var(--scheme-base);
+
+	background-color: var(--card-bg);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-24);
+	padding: var(--space-32);
+	border-radius: var(--border-radius-2);
+}

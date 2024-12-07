@@ -1,0 +1,40 @@
+---
+import { Image, Container } from "@components/index"
+
+interface Props {
+	props: {
+		image?: {
+			src: ImageMetadata
+			alt: string
+		}
+		isContained?: boolean
+		class?: string
+	}
+}
+
+const { props } = Astro.props
+---
+
+{
+	props.isContained ? (
+		<Container class="c-container--gallery">
+			<div class="image-right">
+				<Image
+					src={props.image.src}
+					alt={props.image.alt}
+					class="c-picture--cover"
+					sizes={`60vw`}
+				/>
+			</div>
+		</Container>
+	) : (
+		<div class="image-right">
+			<Image
+				src={props.image.src}
+				alt={props.image.alt}
+				class="c-picture--cover"
+				sizes={`60vw`}
+			/>
+		</div>
+	)
+}

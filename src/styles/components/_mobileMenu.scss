@@ -1,0 +1,42 @@
+@use "../base/breakpoints" as *;
+
+.c-mobile-menu {
+	--mobile-menu-bg: var(--scheme-base);
+	--mobile-menu-color: var(--scheme-contrast);
+	--mobile-menu-logo-color: var(--scheme-contrast);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-64);
+
+	background-color: var(--mobile-menu-bg);
+	color: var(--mobile-menu-color);
+	position: fixed;
+	inset: 0;
+	z-index: 99;
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	padding: var(--space-16);
+	transition: clip-path ease-out 0.3s;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: fit-content;
+	}
+
+	&__logo > .c-icon svg {
+		height: 64px;
+		width: auto;
+		color: var(--mobile-menu-logo-color);
+	}
+}
+
+body.c-mobile-menu--open .c-mobile-menu {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+	@include styles-for(desktopS) {
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+}

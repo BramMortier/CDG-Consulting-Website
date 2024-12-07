@@ -1,0 +1,38 @@
+@use "../base/breakpoints" as *;
+
+.header {
+	--header-logo-color: var(--scheme-contrast);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: var(--space-16);
+
+	@include styles-for(desktopS) {
+		padding-block: var(--space-32);
+	}
+
+	&__logo > .c-icon svg {
+		height: 64px;
+		width: auto;
+		color: var(--header-logo-color);
+
+		@include styles-for(desktopS) {
+			height: 80px;
+		}
+	}
+
+	&__right {
+		display: none;
+		align-items: center;
+		gap: var(--space-48);
+
+		@include styles-for(desktopS) {
+			display: flex;
+		}
+
+		@include styles-for(desktopM) {
+			gap: var(--space-64);
+		}
+	}
+}

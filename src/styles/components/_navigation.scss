@@ -1,0 +1,19 @@
+@use "../base/breakpoints" as *;
+
+.c-navigation {
+	&__links {
+		display: flex;
+		gap: var(--space-32);
+		flex-direction: column;
+
+		@include styles-for(desktopS) {
+			align-items: center;
+			gap: var(--space-48);
+			flex-direction: row;
+		}
+
+		@include styles-for(desktopM) {
+			gap: var(--space-64);
+		}
+	}
+}

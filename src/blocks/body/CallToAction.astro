@@ -1,0 +1,35 @@
+---
+import { Text, Title, Button } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+	}
+	text?: string
+	button?: {
+		label: string
+		href: string
+	}
+}
+
+const { class: className, title, text, button } = Astro.props
+---
+
+<section class:list={["call-to-action", className]}>
+	<div class="call-to-action__card scheme-accent">
+		<div class="call-to-action__card-left">
+			<Title Tag="h2" text={title.text} />
+
+			<Button
+				class="c-button--tertiary scheme-default"
+				href={button.href}
+				label={button.label}
+			/>
+		</div>
+
+		<div class="call-to-action__card-right">
+			<Text class="c-text--subtle typo-body-large" text={text} />
+		</div>
+	</div>
+</section>

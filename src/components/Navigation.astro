@@ -1,0 +1,23 @@
+---
+import { navigation } from "@cms/globals/header"
+
+import { NavigationLink } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<nav class:list={["c-navigation", className]}>
+	<ul class="c-navigation__links">
+		{
+			navigation.map((link) => (
+				<li class="c-navigation-link">
+					<NavigationLink href={link.href} label={link.label} />
+				</li>
+			))
+		}
+	</ul>
+</nav>

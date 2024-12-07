@@ -1,0 +1,12 @@
+@use "../base/breakpoints" as *;
+
+.c-legal-link {
+	--legal-link-color: var(--scheme-contrast);
+
+	color: var(--legal-link-color);
+	transition: all ease-out 0.15s;
+
+	&:hover {
+		--legal-link-color: var(--scheme-primary);
+	}
+}

@@ -1,0 +1,10 @@
+.c-footer-link {
+	--footer-link-color: var(--scheme-contrast);
+
+	color: var(--footer-link-color);
+	transition: all ease-out 0.15s;
+
+	&:hover {
+		--footer-link-color: var(--scheme-primary);
+	}
+}

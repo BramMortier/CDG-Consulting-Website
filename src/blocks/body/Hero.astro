@@ -1,0 +1,60 @@
+---
+import { Title, Text, Image } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		highlight?: number[]
+	}
+	text?: string
+	images?: {
+		src: ImageMetadata
+		alt?: string
+	}[]
+}
+
+const { title, text, images, class: className, ...props } = Astro.props
+---
+
+<section class:list={["hero", className]} {...props}>
+	<div class="hero__intro">
+		<Title Tag="h1" text={title.text} highlight={title.highlight} />
+
+		{text && <Text class="typo-body-large" text={text} />}
+	</div>
+
+	{
+		images && (
+			<div class="hero__images">
+				<Image
+					src={images[0].src}
+					alt={images[0].alt}
+					class="c-picture--cover"
+					sizes={`50vw`}
+				/>
+
+				<Image
+					src={images[1].src}
+					alt={images[1].alt}
+					class="c-picture--cover"
+					sizes={`50vw`}
+				/>
+
+				<Image
+					src={images[0].src}
+					alt={images[0].alt}
+					class="c-picture--cover"
+					sizes={`50vw`}
+				/>
+
+				<Image
+					src={images[1].src}
+					alt={images[1].alt}
+					class="c-picture--cover"
+					sizes={`50vw`}
+				/>
+			</div>
+		)
+	}
+</section>

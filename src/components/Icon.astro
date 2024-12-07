@@ -1,0 +1,27 @@
+---
+import * as icons from "@assets/icons/index"
+
+interface Props {
+	name: string
+	class?: string
+}
+
+const { name, class: className } = Astro.props
+
+const iconMap = {
+	arrow: icons.Arrow,
+	mail: icons.Mail,
+	phone: icons.Phone,
+	logo: icons.Logo,
+	hamburger: icons.Hamburger,
+	close: icons.Close,
+	coretec: icons.CoreTec,
+	unilin: icons.Unilin
+}
+
+const IconComponent = iconMap[name]
+---
+
+<div class:list={["c-icon", className]}>
+	<IconComponent />
+</div>

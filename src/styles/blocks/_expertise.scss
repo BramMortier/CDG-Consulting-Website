@@ -1,0 +1,30 @@
+@use "../base/breakpoints" as *;
+
+.expertise {
+	padding-block: var(--space-48);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-64);
+
+	@include styles-for(tablet) {
+		padding-block: var(--space-96);
+	}
+
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-32);
+		max-width: 750px;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: var(--space-16);
+
+		@include styles-for(desktopS) {
+			gap: var(--space-32);
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}

@@ -1,0 +1,55 @@
+---
+import { Title, IconButton, Image } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		highlight: number[]
+	}
+	image?: {
+		src: ImageMetadata
+		alt: string
+	}
+	buttons?: {
+		label: string
+		href: string
+	}[]
+}
+
+const { class: className, title, image, buttons } = Astro.props
+---
+
+<section class:list={["call-to-action-split", className]}>
+	<div class="call-to-action-split__left">
+		<Title
+			Tag="h2"
+			class="typo-h1"
+			text={title.text}
+			highlight={title.highlight}
+		/>
+	</div>
+
+	<div class="call-to-action-split__right">
+		<Image
+			src={image.src}
+			alt={image.alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+			shape={{
+				x: "left",
+				y: "top"
+			}}
+		/>
+
+		<div class="call-to-action-split__buttons">
+			<IconButton label={buttons[0].label} href={buttons[0].href} />
+
+			<IconButton
+				class="c-icon-button--secondary"
+				label={buttons[1].label}
+				href={buttons[1].href}
+			/>
+		</div>
+	</div>
+</section>

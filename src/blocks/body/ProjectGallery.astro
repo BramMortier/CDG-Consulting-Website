@@ -1,0 +1,30 @@
+---
+import * as galleryBlocks from "@blocks/body/gallery/index"
+
+import { Container } from "@components/index"
+
+interface Props {
+	class?: string
+	gallery?: any
+}
+
+const { class: className, gallery } = Astro.props
+
+const galleryBlocksMap = {
+	"image-left": galleryBlocks.ImageLeft,
+	"image-right": galleryBlocks.ImageRight,
+	"images-30-30-30": galleryBlocks.Images_30_30_30,
+	"images-60-30": galleryBlocks.Images_60_30,
+	"images-30-60": galleryBlocks.Images_30_60
+}
+---
+
+<section class:list={["project-gallery", className]}>
+	{
+		gallery.map((block: any) => {
+			const CurrentBlock = galleryBlocksMap[block.name]
+
+			return <CurrentBlock props={block.props} />
+		})
+	}
+</section>

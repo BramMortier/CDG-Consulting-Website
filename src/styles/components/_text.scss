@@ -1,0 +1,9 @@
+.c-text {
+	--text-color: var(--scheme-contrast);
+
+	color: var(--text-color);
+
+	&--subtle {
+		--text-color: var(--scheme-contrast-subtle);
+	}
+}

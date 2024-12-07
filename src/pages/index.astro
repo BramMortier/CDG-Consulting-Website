@@ -1,0 +1,92 @@
+---
+import { DefaultLayout } from "@layouts/index"
+import { content } from "@cms/pages/home"
+
+import {
+	Hero,
+	Expertise,
+	CallToAction,
+	Split,
+	SplitAlt,
+	Stack,
+	Faq,
+	Reviews,
+	CallToActionSplit
+} from "@blocks/body/index"
+import { Container } from "@components/index"
+---
+
+<DefaultLayout title="Homepage" description="This is the homepage" class="home">
+	<Container>
+		<Hero
+			title={content.hero.title}
+			text={content.hero.text}
+			images={content.hero.images}
+		/>
+	</Container>
+
+	<Container class="scheme-accent-alt">
+		<Expertise
+			title={content.expertise.title}
+			text={content.expertise.text}
+			cards={content.expertise.cards}
+		/>
+	</Container>
+
+	<Container>
+		<Split
+			title={content.split.title}
+			subtitle={content.split.subtitle}
+			text={content.split.text}
+			images={content.split.images}
+		/>
+	</Container>
+
+	<Container>
+		<CallToAction
+			title={content.callToAction.title}
+			text={content.callToAction.text}
+			button={content.callToAction.button}
+		/>
+	</Container>
+
+	<Container>
+		<SplitAlt
+			images={content.splitAlt.images}
+			title={content.splitAlt.title}
+			text={content.splitAlt.text}
+		/>
+	</Container>
+
+	<Container>
+		<Stack
+			title={content.stack.title}
+			text={content.stack.text}
+			images={content.stack.images}
+		/>
+	</Container>
+
+	<Container class="scheme-accent-alt">
+		<Faq
+			image={content.faq.image}
+			title={content.faq.title}
+			faq={content.faq.questions}
+		/>
+	</Container>
+
+	<Container class="c-container--hide-overflow">
+		<Reviews
+			title={content.reviews.title}
+			text={content.reviews.text}
+			reviews={content.reviews.reviews}
+		/>
+	</Container>
+
+	<Container>
+		<CallToActionSplit
+			title={content.callToActionSplit.title}
+			image={content.callToActionSplit.image}
+			buttons={content.callToActionSplit.buttons}
+		/>
+	</Container>
+</DefaultLayout>

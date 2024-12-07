@@ -1,0 +1,46 @@
+---
+import { Text, Title, Image } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		line: boolean
+	}
+	text?: string
+	images?: {
+		src: ImageMetadata
+		alt?: string
+	}[]
+}
+
+const { class: className, title, text, images } = Astro.props
+---
+
+<section class:list={["split-alt", className]}>
+	<div class="split-alt__left">
+		<Image
+			src={images[1].src}
+			alt={images[1].alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+		/>
+
+		<Image
+			src={images[0].src}
+			alt={images[0].alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+			shape={{
+				x: "right",
+				y: "top"
+			}}
+		/>
+	</div>
+
+	<div class="split-alt__right">
+		<Title Tag="h2" text={title.text} highlight={[3]} line={title.line} />
+
+		<Text text={text} />
+	</div>
+</section>

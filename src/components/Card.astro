@@ -1,0 +1,25 @@
+---
+import { Title, Text, Link } from "@components/index"
+
+interface Props {
+	title?: {
+		text: string
+	}
+	text?: string
+	link?: {
+		href?: string
+		label?: string
+	}
+	class?: string
+}
+
+const { title, text, link, class: className } = Astro.props
+---
+
+<article class:list={["c-card scheme-default", className]}>
+	{title && <Title text={title.text} Tag="h2" />}
+
+	{text && <Text class="typo-body-small" text={text} />}
+
+	{link && <Link href={link.href} label={link.label} />}
+</article>

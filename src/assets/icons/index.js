@@ -1,0 +1,8 @@
+export { default as Arrow } from "@assets/icons/Arrow.astro"
+export { default as Logo } from "@assets/icons/Logo.astro"
+export { default as Mail } from "@assets/icons/Mail.astro"
+export { default as Phone } from "@assets/icons/Phone.astro"
+export { default as Hamburger } from "@assets/icons/Hamburger.astro"
+export { default as Close } from "@assets/icons/Close.astro"
+export { default as CoreTec } from "@assets/icons/CoreTec.astro"
+export { default as Unilin } from "@assets/icons/Unilin.astro"

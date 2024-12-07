@@ -1,0 +1,34 @@
+---
+import { Icon, Text } from "@components/index"
+
+interface Props {
+	class?: string
+	action: "open" | "close"
+}
+
+const { class: className, action, ...props } = Astro.props
+
+let label: string
+let icon: string
+
+if (action === "open") {
+	label = "Menu"
+	icon = "hamburger"
+} else {
+	label = "Close"
+	icon = "close"
+}
+---
+
+<js-mobile-menu-button
+	class:list={[
+		"c-mobile-menu-button",
+		`c-mobile-menu-button--${action}`,
+		className
+	]}
+	{...props}
+>
+	<Text text={label} class="typo-h3" />
+
+	<Icon name={icon} />
+</js-mobile-menu-button>

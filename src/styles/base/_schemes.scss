@@ -1,0 +1,56 @@
+// ===========================================================================
+// Theme & scheme definitions
+// ===========================================================================
+.scheme-default {
+	--scheme-base: var(--clr-white);
+	--scheme-contrast: var(--clr-black);
+	--scheme-contrast-subtle: var(--clr-grey-700);
+	--scheme-contrast-inverted: var(--clr-white);
+
+	--scheme-primary: var(--clr-orange-700);
+	--scheme-secondary: var(--clr-green-600);
+	--scheme-tertiary: var(--clr-black);
+
+	--scheme-extra-subtle: var(--clr-grey-500);
+	--scheme-subtle: var(--clr-grey-200);
+
+	--scheme-shape: var(--clr-grey-200);
+
+	--scheme-text-highlight: var(--clr-orange-700);
+}
+
+.scheme-accent {
+	--scheme-base: var(--clr-orange-700);
+	--scheme-contrast: var(--clr-white);
+	--scheme-contrast-subtle: var(--clr-orange-200);
+	--scheme-contrast-inverted: var(--clr-black);
+
+	--scheme-primary: var(--clr-white);
+	--scheme-secondary: var(--clr-white);
+	--scheme-tertiary: var(--clr-white);
+
+	--scheme-extra-subtle: var(--clr-orange-300);
+	--scheme-subtle: var(--clr-orange-500);
+
+	--scheme-shape: var(--clr-orange-200);
+
+	--scheme-text-highlight: var(--clr-white);
+}
+
+.scheme-accent-alt {
+	--scheme-base: var(--clr-green-800);
+	--scheme-contrast: var(--clr-white);
+	--scheme-contrast-subtle: var(--clr-green-300);
+	--scheme-contrast-inverted: var(--clr-black);
+
+	--scheme-primary: var(--clr-white);
+	--scheme-secondary: var(--clr-white);
+	--scheme-tertiary: var(--clr-white);
+
+	--scheme-extra-subtle: var(--clr-green-400);
+	--scheme-subtle: var(--clr-green-600);
+
+	--scheme-shape: var(--clr-green-200);
+
+	--scheme-text-highlight: var(--clr-white);
+}

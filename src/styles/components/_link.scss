@@ -1,0 +1,59 @@
+.c-link {
+	--link-color: var(--scheme-primary);
+
+	color: var(--link-color);
+	text-decoration: none;
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-12);
+	width: fit-content;
+
+	font-family: var(--font-secondary);
+	font-size: var(--fs-18);
+	font-weight: var(--fw-700);
+
+	transition: all ease-out 0.15s;
+
+	&--secondary {
+		--link-color: var(--scheme-secondary);
+	}
+
+	&--tertiary {
+		--link-color: var(--scheme-tertiary);
+	}
+
+	&--plain {
+		&::after {
+			display: none;
+		}
+
+		&:hover {
+			transform: translateX(var(--space-12));
+		}
+	}
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: -0.1rem;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background-color: var(--link-color);
+		transition: all ease-out 0.15s;
+	}
+
+	&:hover {
+		&::after {
+			transform: translateY(var(--space-4));
+		}
+	}
+
+	& > .c-icon svg {
+		height: 16px;
+		width: auto;
+	}
+}

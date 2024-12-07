@@ -1,0 +1,45 @@
+---
+import { ReviewCard } from "@components/index"
+
+interface Props {
+	reviews: {
+		text?: string
+		author?: string
+		authorThumbnail?: {
+			src: ImageMetadata
+			alt: string
+		}
+		rating?: number
+	}[]
+	class?: string
+}
+
+const { reviews, class: className } = Astro.props
+---
+
+<js-review-slider class:list={["c-review-slider", className]}>
+	<ul class="c-review-slider__content">
+		{
+			reviews.map((review, index) => {
+				const cardClass =
+					index % 3 === 1
+						? "c-review-card--secondary"
+						: index % 3 === 2
+							? "c-review-card--tertiary"
+							: ""
+
+				return (
+					<li class="c-review-slider__item">
+						<ReviewCard
+							class={cardClass}
+							text={review.text}
+							author={review.author}
+							authorThumbnail={review.authorThumbnail}
+							rating={review.rating}
+						/>
+					</li>
+				)
+			})
+		}
+	</ul>
+</js-review-slider>

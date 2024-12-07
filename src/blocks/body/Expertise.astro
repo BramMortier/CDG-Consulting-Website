@@ -1,0 +1,47 @@
+---
+import { Text, Title, Card } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		highlight?: number[]
+		line: boolean
+	}
+	text?: string
+	cards?: {
+		title?: {
+			text: string
+		}
+		text?: string
+		link?: {
+			label?: string
+			href?: string
+		}
+	}[]
+}
+
+const { class: className, title, text, cards } = Astro.props
+---
+
+<section class:list={["expertise", className]}>
+	<div class="expertise__intro">
+		<Title
+			Tag="h2"
+			class="typo-h1"
+			text={title.text}
+			line={title.line}
+			highlight={title.highlight}
+		/>
+
+		<Text class="c-text--subtle typo-body-large" text={text} />
+	</div>
+
+	<div class="expertise__cards">
+		{
+			cards.map((card) => (
+				<Card title={card.title} text={card.text} link={card.link} />
+			))
+		}
+	</div>
+</section>

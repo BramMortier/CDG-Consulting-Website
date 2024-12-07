@@ -1,0 +1,33 @@
+---
+interface Props {
+	Tag: string
+	text: string
+	class?: string
+	line?: boolean
+	highlight?: number[]
+}
+
+const { Tag, text, class: className, line, highlight } = Astro.props
+
+const splitTitle = text.split(" ")
+---
+
+<Tag class:list={["c-title", className]}>
+	{
+		highlight
+			? splitTitle.map((word, index) => (
+					<>
+						<span
+							class={`c-title__word ${highlight.includes(index + 1) ? "c-title--highlighted" : ""}`}
+						>
+							{word}
+
+							{index === splitTitle.length - 1 && line && (
+								<div class="c-title__line" />
+							)}
+						</span>
+					</>
+				))
+			: text
+	}
+</Tag>

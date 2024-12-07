@@ -1,0 +1,38 @@
+---
+import { Text, Title, ReviewSlider } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		highlight: number[]
+	}
+	text?: string
+	reviews: {
+		text?: string
+		author?: string
+		authorThumbnail?: {
+			src: ImageMetadata
+			alt: string
+		}
+		rating?: number
+	}[]
+}
+
+const { class: className, title, text, reviews } = Astro.props
+---
+
+<section class:list={["reviews", className]}>
+	<div class="reviews__intro">
+		<Title
+			Tag="h2"
+			class="typo-h1"
+			text={title.text}
+			highlight={title.highlight}
+		/>
+
+		<Text class="typo-body-large" text={text} />
+	</div>
+
+	<ReviewSlider reviews={reviews} />
+</section>

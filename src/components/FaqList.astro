@@ -1,0 +1,29 @@
+---
+import { Text } from "@components/index"
+
+interface Props {
+	class?: string
+	faq: {
+		question: string
+		awnser: string
+	}[]
+}
+
+const { faq, class: className } = Astro.props
+---
+
+<js-faq-list class:list={["c-faq-list", className]}>
+	{
+		faq.map((item) => (
+			<li class="c-faq-list__item">
+				<div class="c-faq-list__item-question">
+					<Text class="typo-body-large" text={item.question} />
+				</div>
+
+				<div class="c-faq-list__item-awnser">
+					<Text text={item.awnser} />
+				</div>
+			</li>
+		))
+	}
+</js-faq-list>

@@ -1,0 +1,119 @@
+@use "breakpoints" as *;
+
+// =============================================================================
+// Fonts
+// =============================================================================
+
+// Lora (variable)
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+// Nunito Sans (variable)
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+	// =========================================================================
+	// Color propreties
+	// =========================================================================
+
+	// Neutrals
+	--clr-black: hsl(348, 6%, 17%);
+
+	--clr-grey-900: hsl(343, 6%, 21%);
+	--clr-grey-700: hsl(0, 0%, 47%);
+	--clr-grey-500: hsl(0, 0%, 76%);
+	--clr-grey-300: hsl(0, 0%, 85%);
+	--clr-grey-200: hsl(0, 0%, 97%);
+
+	--clr-white: hsl(0, 0%, 100%);
+
+	// Primary
+	--clr-orange-700: hsl(13, 100%, 61%);
+	--clr-orange-500: hsl(13, 100%, 65%);
+	--clr-orange-300: hsl(13, 100%, 83%);
+	--clr-orange-200: hsl(14, 100%, 94%);
+
+	// Secondary
+	--clr-green-800: hsl(164, 20%, 34%);
+	--clr-green-600: hsl(165, 19%, 40%);
+	--clr-green-400: hsl(164, 13%, 58%);
+	--clr-green-300: hsl(164, 12%, 76%);
+	--clr-green-200: hsl(165, 13%, 94%);
+
+	// =========================================================================
+	// Spacing propreties
+	// =========================================================================
+	$spacing-values: (
+		1,
+		4,
+		8,
+		10,
+		12,
+		16,
+		20,
+		24,
+		32,
+		48,
+		64,
+		80,
+		96,
+		112,
+		128,
+		144,
+		160,
+		256
+	);
+
+	@each $value in $spacing-values {
+		--space-#{$value}: #{calc($value / 16)}rem;
+	}
+
+	// =========================================================================
+	// Border radius propreties
+	// =========================================================================
+	$border-radius-values: (2);
+
+	@each $value in $border-radius-values {
+		--border-radius-#{$value}: #{$value}px;
+	}
+
+	--border-radius-round: 100%;
+
+	// =========================================================================
+	// Container propreties
+	// =========================================================================
+	--container-default-width: 1600px;
+	--container-default-gap: var(--space-16);
+	--container-default-bound-l: var(--space-16);
+	--container-default-bound-r: var(--space-16);
+
+	@include styles-for(tablet) {
+		--container-default-bound-l: var(--space-32);
+		--container-default-bound-r: var(--space-32);
+	}
+
+	@include styles-for(desktopS) {
+		--container-default-gap: var(--space-32);
+		--container-default-bound-l: var(--space-64);
+		--container-default-bound-r: var(--space-64);
+	}
+
+	--container-full-width: 100vw;
+	--container-full-gap: var(--space-16);
+	--container-full-bound-l: 0;
+	--container-full-bound-r: 0;
+
+	@include styles-for(desktopS) {
+		--container-full-gap: var(--space-32);
+	}
+
+	--container-gallery-width: 100vw;
+	--container-gallery-gap: var(--space-16);
+	--container-gallery-bound-l: var(--space-16);
+	--container-gallery-bound-r: var(--space-16);
+
+	@include styles-for(tablet) {
+		--container-gallery-gap: var(--space-32);
+		--container-gallery-bound-l: var(--space-32);
+		--container-gallery-bound-r: var(--space-32);
+	}
+}

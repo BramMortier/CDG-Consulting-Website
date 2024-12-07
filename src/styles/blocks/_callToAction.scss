@@ -1,0 +1,61 @@
+@use "../base/breakpoints" as *;
+
+.call-to-action {
+	padding-block: var(--space-48);
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--container-default-gap);
+
+	@include styles-for(desktopS) {
+		padding-block: var(--space-96);
+	}
+
+	&__card {
+		--call-to-action-card-bg: var(--scheme-base);
+
+		background-color: var(--call-to-action-card-bg);
+		grid-column: span 12;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: var(--space-48);
+		padding: var(--space-32);
+
+		@include styles-for(desktopS) {
+			padding: var(--space-48);
+			flex-direction: row;
+		}
+
+		@include styles-for(desktopM) {
+			grid-column: 2 / 12;
+		}
+
+		@include styles-for(desktopL) {
+			padding: var(--space-48) var(--space-64);
+			gap: var(--space-96);
+		}
+	}
+
+	&__card-left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: var(--space-32);
+
+		& > .c-button {
+			padding-inline: var(--space-48);
+		}
+
+		& > .c-title {
+			@include styles-for(desktopS) {
+				max-width: 500px;
+			}
+		}
+	}
+
+	&__card-right {
+		@include styles-for(desktopS) {
+			max-width: 500px;
+		}
+	}
+}

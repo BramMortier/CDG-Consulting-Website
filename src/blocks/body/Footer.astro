@@ -1,0 +1,96 @@
+---
+import { navigation, legalNavigation, content } from "@cms/globals/footer"
+
+import {
+	Text,
+	Image,
+	Icon,
+	LegalLink,
+	FooterLink,
+	Container
+} from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<footer class:list={["footer", className]}>
+	<ul class="footer__partners">
+		{
+			content.partners.map((partner) => (
+				<li class="footer__partner">
+					<Icon name={partner} />
+				</li>
+			))
+		}
+	</ul>
+
+	<div class="footer__banner">
+		<Image
+			src={content.image.src}
+			alt={content.image.alt}
+			class="c-picture--cover"
+			sizes={`100vw`}
+		/>
+	</div>
+
+	<Container class="footer__bottom">
+		<div class="footer__main">
+			<div class="footer__contact">
+				<Text text={content.text} />
+
+				<ul class="footer__contact-list">
+					<li class="footer__contact-list-item">
+						<div class="footer__contact-icon">
+							<Icon name="phone" />
+						</div>
+
+						<Text text={content.phoneNumber} />
+					</li>
+
+					<li class="footer__contact-list-item">
+						<div class="footer__contact-icon">
+							<Icon name="mail" />
+						</div>
+
+						<Text text={content.email} />
+					</li>
+				</ul>
+
+				<Icon name="logo" />
+			</div>
+
+			<nav class="footer__navigation">
+				<ul class="footer__navigation-links">
+					{
+						navigation.map((link) => (
+							<li class="footer__navigation-link">
+								<FooterLink
+									label={link.label}
+									href={link.href}
+								/>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
+
+		<nav class="footer__legal">
+			<Text text={content.copyright} />
+
+			<ul class="footer__legal-links">
+				{
+					legalNavigation.map((link) => (
+						<li class="footer__legal-link">
+							<LegalLink label={link.label} href={link.href} />
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</Container>
+</footer>

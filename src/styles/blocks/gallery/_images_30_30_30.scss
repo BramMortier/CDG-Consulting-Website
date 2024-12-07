@@ -1,0 +1,17 @@
+@use "../../base/breakpoints" as *;
+
+.images-30-30-30 {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--container-gallery-gap);
+
+	& > .c-picture {
+		grid-column: span 4;
+		height: 600px;
+		width: 100%;
+
+		img {
+			height: 100%;
+		}
+	}
+}

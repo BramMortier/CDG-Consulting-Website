@@ -1,0 +1,28 @@
+---
+import { Icon } from "@components/index"
+import { HTMLAttributes } from "astro/types"
+
+interface Props extends HTMLAttributes<"a"> {
+	href: string
+	label?: string
+	target?: string
+	class?: string
+}
+
+const {
+	href,
+	target = "_self",
+	label,
+	class: className,
+	...props
+} = Astro.props
+---
+
+<a
+	href={href}
+	target={target}
+	class:list={["c-navigation-link typo-navigation-link", className]}
+	{...props}
+>
+	{label}
+</a>

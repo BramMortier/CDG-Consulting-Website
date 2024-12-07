@@ -1,0 +1,20 @@
+@use "../base/breakpoints" as *;
+
+.c-mobile-menu-button {
+	--mobile-menu-button-color: var(--scheme-contrast);
+
+	color: var(--mobile-menu-button-color);
+	align-items: center;
+	gap: var(--space-12);
+	border: none;
+	background-color: transparent;
+	display: flex;
+
+	@include styles-for(desktopS) {
+		display: none;
+	}
+
+	& > .c-text {
+		font-size: var(--fs-20);
+	}
+}

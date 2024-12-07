@@ -1,0 +1,37 @@
+---
+import { Button } from "@components/index"
+
+interface Props {
+	class?: string
+	buttons: {
+		class?: string
+		label?: string
+		target?: string
+		href?: string
+	}[]
+}
+
+const { class: className, buttons, ...props } = Astro.props
+---
+
+{
+	buttons.length > 0 ? (
+		<ul class:list={["c-buttons", className]} {...props}>
+			{buttons.map((button) => (
+				<Button
+					label={button.label}
+					class={button.class}
+					target={button.target}
+					href={button.href}
+				/>
+			))}
+		</ul>
+	) : (
+		<Button
+			label={buttons[0].label}
+			class={buttons[0].class}
+			target={buttons[0].target}
+			href={buttons[0].href}
+		/>
+	)
+}

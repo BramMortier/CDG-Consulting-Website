@@ -1,0 +1,10 @@
+.c-navigation-link {
+	--navigation-link-color: var(--scheme-contrast);
+
+	color: var(--navigation-link-color);
+	transition: all ease-out 0.15s;
+
+	&:hover {
+		--navigation-link-color: var(--scheme-primary);
+	}
+}

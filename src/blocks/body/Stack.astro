@@ -1,0 +1,66 @@
+---
+import { Text, Title, Image } from "@components/index"
+
+interface Props {
+	class?: string
+	title?: {
+		text: string
+		line: boolean
+	}
+	text?: string
+	images?: {
+		src: ImageMetadata
+		alt?: string
+	}[]
+}
+
+const { class: className, title, text, images } = Astro.props
+
+function splitString(string: string): string[] {
+	const words = string.split(" ")
+
+	const mid = Math.floor(words.length / 2)
+
+	const firstHalfWords = words.slice(0, mid)
+	const secondHalfWords = words.slice(mid)
+
+	const firstHalf = firstHalfWords.join(" ")
+	const secondHalf = secondHalfWords.join(" ")
+
+	return [firstHalf, secondHalf]
+}
+
+const [textCol1, textCol2] = splitString(text)
+---
+
+<section class:list={["stack", className]}>
+	<div class="stack__top">
+		<Title Tag="h2" text={title.text} highlight={[4]} line={title.line} />
+
+		<div class="stack__top-text">
+			<Text text={textCol1} />
+
+			<Text text={textCol2} />
+		</div>
+	</div>
+
+	<div class="stack__bottom">
+		<Image
+			src={images[1].src}
+			alt={images[1].alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+		/>
+
+		<Image
+			src={images[0].src}
+			alt={images[0].alt}
+			class="c-picture--cover"
+			sizes={`50vw`}
+			shape={{
+				x: "right",
+				y: "top"
+			}}
+		/>
+	</div>
+</section>

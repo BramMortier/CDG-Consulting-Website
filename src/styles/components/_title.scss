@@ -1,0 +1,44 @@
+.c-title {
+	--title-color: var(--scheme-contrast);
+	--title-highlight-color: var(--scheme-text-highlight);
+
+	--title-line-color: var(--scheme-contrast);
+	--title-line-gap: var(--space-24);
+	--title-line-length: var(--space-96);
+	--title-line-height: 3px;
+
+	color: var(--title-color);
+
+	&__line {
+		background-color: var(--title-line-color);
+		height: var(--title-line-height);
+		width: var(--title-line-length);
+	}
+
+	&__word {
+		display: inline-block;
+
+		&:last-child {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--title-line-gap);
+			width: fit-content;
+		}
+	}
+
+	&--highlighted {
+		color: var(--scheme-text-highlight);
+	}
+}
+
+h2.c-title {
+	--title-line-gap: var(--space-20);
+	--title-line-length: var(--space-64);
+	--title-line-height: 2px;
+}
+
+h3.c-title {
+	--title-line-gap: var(--space-16);
+	--title-line-length: var(--space-64);
+	--title-line-height: 2px;
+}

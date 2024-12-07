@@ -1,0 +1,43 @@
+---
+import { Picture } from "astro:assets"
+
+interface Props {
+	src: ImageMetadata
+	alt: string
+	sizes: string
+	class?: string
+	aboveTheFold?: boolean
+	shape?: {
+		x?: "left" | "right"
+		y?: "top" | "bottom"
+	}
+}
+
+const {
+	src,
+	alt,
+	aboveTheFold = false,
+	sizes,
+	shape,
+	class: className,
+	...props
+} = Astro.props
+
+let shapeClass = "c-picture"
+
+if (shape?.x && shape?.y) {
+	shapeClass += ` c-picture--shape-${shape.y}-${shape.x}`
+}
+---
+
+<Picture
+	pictureAttributes={{ class: shapeClass }}
+	class:list={["c-picture__image", className]}
+	src={src}
+	alt={alt}
+	loading="lazy"
+	formats={["webp", "avif"]}
+	widths={[640, 768, 1024, 1366, 1600, 1920, src.width]}
+	sizes={sizes}
+	{...props}
+/>

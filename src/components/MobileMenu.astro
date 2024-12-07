@@ -1,0 +1,25 @@
+---
+import { ctaButtons } from "@cms/globals/header"
+
+import { Navigation, Icon, Buttons, MobileMenuButton } from "@components/index"
+
+interface Props {
+	class?: string
+}
+
+const { class: className, ...props } = Astro.props
+---
+
+<div class:list={["c-mobile-menu", className]} {...props}>
+	<div class="c-mobile-menu__top">
+		<a href="/" class="c-mobile-menu__logo">
+			<Icon name="logo" />
+		</a>
+
+		<MobileMenuButton action="close" />
+	</div>
+
+	<Navigation />
+
+	<Buttons buttons={ctaButtons} />
+</div>

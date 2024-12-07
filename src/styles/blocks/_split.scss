@@ -1,0 +1,95 @@
+@use "../base/breakpoints" as *;
+
+.split {
+	padding-block: var(--space-48);
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: var(--container-default-gap);
+
+	@include styles-for(desktopS) {
+		padding-block: var(--space-96);
+	}
+
+	&__left {
+		grid-column: span 12;
+		display: grid;
+		gap: var(--space-32) var(--container-default-gap);
+		grid-template-columns: repeat(5, 1fr);
+
+		@include styles-for(desktopS) {
+			gap: var(--space-96) var(--container-default-gap);
+			grid-column: 1 / 6;
+		}
+
+		& > .c-title {
+			grid-column: 1 / 6;
+		}
+
+		& > .c-picture {
+			grid-column: span 6;
+			height: 500px;
+			width: 100%;
+
+			@include styles-for(desktopS) {
+				grid-column: 2 / 6;
+				height: 400px;
+			}
+
+			@include styles-for(desktopM) {
+				height: 500px;
+			}
+
+			@include styles-for(desktopL) {
+				height: 600px;
+			}
+
+			& > img {
+				height: 100%;
+			}
+		}
+	}
+
+	&__right {
+		grid-column: span 12;
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-32);
+
+		@include styles-for(desktopS) {
+			gap: var(--space-64);
+			grid-column: 7 / 13;
+		}
+
+		& > .c-picture {
+			height: 500px;
+			width: 100%;
+
+			@include styles-for(desktopM) {
+				height: 600px;
+			}
+
+			@include styles-for(desktopL) {
+				height: 750px;
+			}
+
+			& > img {
+				height: 100%;
+			}
+		}
+	}
+
+	&__right-info {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-16);
+
+		@include styles-for(desktopS) {
+			gap: var(--space-32);
+		}
+
+		& > .c-text {
+			max-width: 500px;
+		}
+	}
+}

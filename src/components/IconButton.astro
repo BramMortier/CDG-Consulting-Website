@@ -1,0 +1,34 @@
+---
+import { HTMLAttributes } from "astro/types"
+import { Icon } from "@components/index"
+
+interface Props extends HTMLAttributes<"button"> {
+	class?: string
+	label?: string
+	target?: string
+	href?: string
+}
+
+const {
+	label,
+	target = "_self",
+	href,
+	class: className,
+	...props
+} = Astro.props
+
+const Tag = href ? "a" : "button"
+---
+
+<Tag
+	class:list={["c-icon-button", className]}
+	target={target}
+	href={href}
+	{...props}
+>
+	{label}
+
+	<div class="c-icon-button__icon">
+		<Icon name="arrow" />
+	</div>
+</Tag>

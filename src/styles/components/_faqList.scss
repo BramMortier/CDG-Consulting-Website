@@ -1,0 +1,36 @@
+@use "../base/breakpoints" as *;
+
+.c-faq-list {
+	--faq-item-border-color: var(--scheme-subtle);
+
+	display: flex;
+	flex-direction: column;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		transition: all ease-out 0.15s;
+		border-bottom: 2px solid var(--faq-item-border-color);
+
+		&--expanded {
+			.c-faq-list__item-awnser {
+				display: flex;
+			}
+		}
+
+		&:hover {
+			filter: brightness(1.15);
+			cursor: pointer;
+		}
+	}
+
+	&__item-question {
+		padding: var(--space-24) var(--space-16);
+	}
+
+	&__item-awnser {
+		display: none;
+		padding: 0 var(--space-16) var(--space-16) var(--space-16);
+		max-width: 600px;
+	}
+}

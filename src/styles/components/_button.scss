@@ -1,0 +1,51 @@
+.c-button {
+	--button-bg: var(--scheme-primary);
+	--button-color: var(--scheme-contrast-inverted);
+
+	background-color: var(--button-bg);
+	color: var(--button-color);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-12);
+
+	font-family: var(--font-secondary);
+	font-size: var(--fs-16);
+	font-weight: var(--fw-600);
+	text-decoration: none;
+
+	outline: none;
+	border: none;
+	border-radius: var(--border-radius-2);
+	padding-inline: var(--space-20);
+	height: 3.125rem;
+	width: fit-content;
+
+	transition: all ease 0.2s;
+
+	&--secondary {
+		--button-bg: var(--scheme-secondary);
+	}
+
+	&--tertiary {
+		--button-bg: var(--scheme-tertiary);
+	}
+
+	&:disabled {
+		--button-bg: var(--scheme-subtle);
+		--button-color: var(--scheme-extra-subtle);
+
+		font-weight: var(--fw-600);
+
+		&:hover {
+			cursor: not-allowed;
+			transform: translateY(0);
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		transform: translateY(calc(var(--space-4) * -1));
+	}
+}

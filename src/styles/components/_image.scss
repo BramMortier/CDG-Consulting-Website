@@ -1,0 +1,52 @@
+@use "../base/breakpoints" as *;
+
+.c-picture {
+	--picture-shape-color: var(--scheme-subtle);
+
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	z-index: 1;
+
+	&__image {
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	&::after {
+		display: none;
+		content: "";
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+
+		background-color: var(--picture-shape-color);
+		border-radius: var(--border-radius-2);
+
+		@include styles-for(desktopS) {
+			display: flex;
+		}
+	}
+
+	&--shape-top-left::after {
+		transform: translate(-2rem, -2rem);
+	}
+
+	&--shape-top-right::after {
+		transform: translate(2rem, -2rem);
+	}
+
+	&--shape-bottom-left::after {
+		transform: translate(-2rem, 2rem);
+	}
+
+	&--shape-bottom-right::after {
+		transform: translate(2rem, 2rem);
+	}
+
+	&--cover {
+		object-fit: cover;
+		object-position: center;
+	}
+}

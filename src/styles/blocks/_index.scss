@@ -1,0 +1,20 @@
+// =============================================================================
+// Gallery blocks
+// =============================================================================
+@use "gallery";
+
+// =============================================================================
+// General blocks
+// =============================================================================
+@forward "header";
+@forward "footer";
+@forward "hero";
+@forward "expertise";
+@forward "callToAction";
+@forward "split";
+@forward "splitAlt";
+@forward "stack";
+@forward "faq";
+@forward "reviews";
+@forward "callToActionSplit";
+@forward "projectGallery";

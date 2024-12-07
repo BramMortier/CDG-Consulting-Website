@@ -1,0 +1,120 @@
+@use "../base/breakpoints" as *;
+
+.hero {
+	padding-block: var(--space-48);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-64);
+	align-items: center;
+
+	@include styles-for(tablet) {
+		gap: var(--space-96);
+	}
+
+	&--align-left {
+		align-items: flex-start;
+
+		.hero__intro {
+			align-items: flex-start;
+			text-align: left;
+		}
+	}
+
+	&__intro {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-24);
+		align-items: center;
+		text-align: center;
+		max-width: 750px;
+
+		& > .c-text {
+			max-width: 500px;
+		}
+	}
+
+	&__images {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(9, 30px);
+		gap: var(--space-16) var(--container-default-gap);
+
+		@include styles-for(tabletS) {
+			grid-template-rows: repeat(9, 40px);
+		}
+
+		@include styles-for(desktopL) {
+			grid-template-rows: repeat(9, 55px);
+		}
+
+		& > .c-picture {
+			grid-column: span 12;
+			height: 100%;
+			width: 100%;
+
+			@include styles-for(mobileL) {
+				grid-column: span 6;
+			}
+
+			@include styles-for(tablet) {
+				grid-column: span 4;
+			}
+
+			@include styles-for(desktopM) {
+				grid-column: span 3;
+			}
+
+			img {
+				height: 100%;
+			}
+		}
+
+		& > .c-picture:nth-child(1) {
+			grid-row: 1 / 10;
+
+			@include styles-for(mobileL) {
+				grid-row: 1 / 9;
+			}
+
+			@include styles-for(tablet) {
+				grid-row: 2 / 9;
+			}
+		}
+
+		& > .c-picture:nth-child(2) {
+			display: none;
+			grid-row: 2 / 10;
+
+			@include styles-for(mobileL) {
+				display: initial;
+			}
+
+			@include styles-for(tablet) {
+				grid-row: 3 / 10;
+			}
+		}
+
+		& > .c-picture:nth-child(3) {
+			display: none;
+			grid-row: 1 / 9;
+
+			@include styles-for(tablet) {
+				display: initial;
+			}
+
+			@include styles-for(desktopM) {
+				grid-row: 1 / 10;
+			}
+		}
+
+		& > .c-picture:nth-child(4) {
+			display: none;
+			grid-row: 4 / 9;
+
+			@include styles-for(desktopM) {
+				display: initial;
+			}
+		}
+	}
+}

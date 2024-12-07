@@ -1,0 +1,13 @@
+.c-number {
+	--number-color: var(--scheme-contrast);
+	--label-color: var(--scheme-contrast);
+
+	color: var(--number-color);
+
+	display: flex;
+	gap: var(--space-8);
+
+	&__label {
+		color: var(--label-color);
+	}
+}
