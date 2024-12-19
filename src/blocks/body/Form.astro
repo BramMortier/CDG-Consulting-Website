@@ -1,5 +1,15 @@
 ---
-import { Title, Text, IconButton, Input, Link } from "@components/index"
+import {
+	Title,
+	Text,
+	IconButton,
+	Button,
+	Input,
+	Textarea,
+	Link
+} from "@components/index"
+
+import { services } from "@cms/services/index"
 
 interface Props {
 	class?: string
@@ -40,7 +50,7 @@ const { tips, class: className } = Astro.props
 			<Link
 				class="c-link--plain c-link--tertiary"
 				label="Vragen & Diensten"
-				href="/contact#greeting-fieldset"
+				href="/contact#questions-fieldset"
 			/>
 		</div>
 	</aside>
@@ -136,6 +146,42 @@ const { tips, class: className } = Astro.props
 							placeholder="9700"
 						/>
 					</div>
+				</div>
+			</fieldset>
+
+			<fieldset id="questions-fieldset" class="form__fieldset">
+				<legend>
+					<Title
+						highlight={[1]}
+						text="4. Met welke dienst kunnen we je helpen?"
+						Tag="h2"
+						line={true}
+					/>
+				</legend>
+
+				<div class="form__fieldset-content">
+					<Text
+						text="Selecteer 1 of meerdere diensten waarover je vragen hebt of advies wilt. Hoe meer info je ons op voorhand kan meegeven hoe vlotter we kunnen werken."
+					/>
+
+					<ul class="form__services">
+						{
+							services.map((service) => (
+								<li
+									class="form__service"
+									data-service={service}
+								>
+									<Button
+										type="button"
+										class="c-button--tertiary"
+										label={service}
+									/>
+								</li>
+							))
+						}
+					</ul>
+
+					<ul class="form__questions"></ul>
 				</div>
 			</fieldset>
 		</div>

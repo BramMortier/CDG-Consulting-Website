@@ -1,0 +1,32 @@
+@use "../base/breakpoints" as *;
+
+.c-textarea {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-4);
+	max-width: 800px;
+
+	textarea {
+		resize: none;
+		border: 1px solid var(--clr-grey-500);
+		outline: none;
+		background-color: transparent;
+		padding-inline: var(--space-16);
+		padding-block: var(--space-8);
+		height: 120px;
+		transition: all ease-out 0.3s;
+
+		&:hover,
+		&:focus {
+			border-color: var(--clr-grey-900);
+		}
+
+		&::placeholder {
+			font-family: var(--font-secondary);
+			font-weight: var(--fw-400);
+			font-size: clamp(var(--fs-16), 0.163vw + 0.962rem, var(--fs-18));
+			line-height: var(--lh-wide);
+			color: var(--clr-grey-500);
+		}
+	}
+}

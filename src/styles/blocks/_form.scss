@@ -33,21 +33,23 @@
 	&__fields {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-160);
+		gap: var(--space-96);
 	}
 
 	&__fieldset {
 		border: none;
+		max-width: 800px;
 
 		legend {
 			margin-bottom: var(--space-32);
+			padding-top: var(--space-48);
+			width: 100%;
 		}
 
 		&-3-1-layout {
 			display: grid;
 			grid-template-columns: 3fr 1fr;
 			gap: var(--space-32);
-			max-width: 800px;
 		}
 	}
 
@@ -55,6 +57,37 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-32);
+	}
+
+	&__questions {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-48);
+	}
+
+	&__question {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-32);
+		padding-left: var(--space-32);
+
+		&:has(input:focus) {
+			&::after {
+				background-color: var(--clr-orange-500);
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 4px;
+			background-color: var(--clr-grey-200);
+			transition: all ease-out 0.15s;
+		}
 	}
 
 	&__tips {
@@ -73,5 +106,11 @@
 		& > .c-text {
 			color: var(--clr-white);
 		}
+	}
+
+	&__services {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-8);
 	}
 }

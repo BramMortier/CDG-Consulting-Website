@@ -19,14 +19,14 @@ const {
 } = Astro.props
 ---
 
-<div class:list={["c-input", className]}>
-	<label class="c-input__label typo-body-medium" for={id}>{label}</label>
+<div class:list={["c-textarea", className]}>
+	<label class="c-textarea__label typo-body-medium" for={id}>{label}</label>
 
-	<input
-		type={type}
+	<textarea
 		id={id}
 		name={name}
 		placeholder={placeholder}
-		class="c-input__field typo-body-medium"
-	/>
+		class="c-textarea__field typo-body-medium"
+	>
+	</textarea>
 </div>
