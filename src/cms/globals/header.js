@@ -1,7 +1,7 @@
 export const navigation = [
 	{
 		label: "Onze expertise",
-		href: "#"
+		href: "/#expertise-section"
 	},
 	{
 		label: "Projecten",
@@ -9,11 +9,11 @@ export const navigation = [
 	},
 	{
 		label: "FAQ",
-		href: "#"
+		href: "/#faq-section"
 	},
 	{
 		label: "Reviews",
-		href: "#"
+		href: "/#reviews-section"
 	}
 ]
 

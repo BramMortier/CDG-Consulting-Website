@@ -1,23 +1,38 @@
+@use "../base/breakpoints" as *;
+
 .footer {
 	display: flex;
 	flex-direction: column;
 
 	&__partners {
-		height: 140px;
+		height: 100px;
 		background-color: var(--clr-orange-700);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: var(--space-96);
+		gap: var(--space-64);
+
+		@include styles-for(desktopS) {
+			gap: var(--space-96);
+			height: 140px;
+		}
 	}
 
 	&__partner > .c-icon > svg {
-		height: 90px;
+		height: 70px;
 		color: var(--clr-white);
+
+		@include styles-for(desktopS) {
+			height: 90px;
+		}
 	}
 
 	&__partner:nth-child(2) > .c-icon > svg {
-		height: 50px;
+		height: 40px;
+
+		@include styles-for(desktopS) {
+			height: 50px;
+		}
 	}
 
 	&__banner {
@@ -38,23 +53,40 @@
 	&__main {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		gap: var(--container-default-gap);
+		gap: var(--space-48) var(--container-default-gap);
 		padding-bottom: var(--space-32);
 	}
 
 	&__contact {
-		grid-column: 1 / 6;
+		grid-column: span 12;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		gap: var(--space-32);
+
+		@include styles-for(tablet) {
+			flex-direction: row;
+		}
+
+		@include styles-for(desktopM) {
+			flex-direction: column;
+			grid-column: 1 / 6;
+		}
+
+		& > .c-icon svg {
+			height: 80px;
+			width: auto;
+		}
+	}
+
+	&__contact-info {
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-32);
 
 		& > .c-text {
 			max-width: 400px;
-		}
-
-		& > .c-icon svg {
-			height: 80px;
-			width: auto;
 		}
 	}
 
@@ -89,7 +121,15 @@
 	}
 
 	&__navigation {
-		grid-column: 7 / 13;
+		grid-column: span 12;
+
+		@include styles-for(tablet) {
+			grid-column: span 10;
+		}
+
+		@include styles-for(desktopM) {
+			grid-column: 7 / 13;
+		}
 	}
 
 	&__navigation-links {
@@ -99,20 +139,32 @@
 	}
 
 	&__navigation-link {
-		grid-column: span 3;
 		width: fit-content;
+		grid-column: span 6;
+
+		@include styles-for(tabletS) {
+			grid-column: span 3;
+		}
 	}
 
 	&__legal {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: var(--space-16);
+
 		padding-block: var(--space-24);
 		border-top: 1px solid var(--clr-grey-300);
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+
+		@include styles-for(desktopS) {
+			align-items: center;
+			flex-direction: row;
+		}
 	}
 
 	&__legal-links {
 		display: flex;
-		gap: var(--space-48);
+		flex-wrap: wrap;
+		gap: var(--space-12) var(--space-48);
 	}
 }

@@ -21,7 +21,7 @@ interface Props {
 const { class: className, title, image, faq } = Astro.props
 ---
 
-<section class:list={["faq", className]}>
+<section id="faq-section" class:list={["faq", className]}>
 	<div class="faq__left">
 		<Image
 			src={image.src}

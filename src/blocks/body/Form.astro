@@ -1,0 +1,151 @@
+---
+import { Title, Text, IconButton, Input, Link } from "@components/index"
+
+interface Props {
+	class?: string
+	tips: {
+		title: {
+			text: string
+		}
+		text: string
+	}
+}
+
+const { tips, class: className } = Astro.props
+---
+
+<js-form class:list={["form", className]}>
+	<aside class="form__tabs">
+		<Title text="Stappen" Tag="h2" />
+
+		<div class="form__tabs-main">
+			<Link
+				class="c-link--plain c-link--tertiary"
+				label="Aanspreking"
+				href="/contact#greeting-fieldset"
+			/>
+
+			<Link
+				class="c-link--plain c-link--tertiary"
+				label="Gegevens"
+				href="/contact#contact-details-fieldset"
+			/>
+
+			<Link
+				class="c-link--plain c-link--tertiary"
+				label="Adres"
+				href="/contact#address-fieldset"
+			/>
+
+			<Link
+				class="c-link--plain c-link--tertiary"
+				label="Vragen & Diensten"
+				href="/contact#greeting-fieldset"
+			/>
+		</div>
+	</aside>
+
+	<form class="form__main">
+		<div class="form__fields">
+			<fieldset id="greeting-fieldset" class="form__fieldset">
+				<legend>
+					<Title
+						highlight={[1]}
+						text="1. Hoe wil je aangesproken worden?"
+						Tag="h2"
+						line={true}
+					/>
+				</legend>
+
+				<div class="form__fieldset-content">
+					<Input
+						id="firstname"
+						name="firstname"
+						label="Voornaam"
+						placeholder="Voornaam"
+					/>
+
+					<Input
+						id="lastname"
+						name="lastname"
+						label="Achternaam"
+						placeholder="Achternaam"
+					/>
+				</div>
+			</fieldset>
+
+			<fieldset id="contact-details-fieldset" class="form__fieldset">
+				<legend>
+					<Title
+						highlight={[1]}
+						text="2. Hoe kunnen we je best bereiken?"
+						Tag="h2"
+						line={true}
+					/>
+				</legend>
+
+				<div class="form__fieldset-content">
+					<Input
+						type="phone"
+						id="phone"
+						name="phone"
+						label="Telefoonnummer"
+						placeholder="+32 000 00 00 00"
+					/>
+
+					<Input
+						type="email"
+						id="email"
+						name="email"
+						label="E-mailadres"
+						placeholder="email@gmail.com"
+					/>
+				</div>
+			</fieldset>
+
+			<fieldset id="address-fieldset" class="form__fieldset">
+				<legend>
+					<Title
+						highlight={[1]}
+						text="3. Jouw adres gegevens"
+						Tag="h2"
+						line={true}
+					/>
+				</legend>
+
+				<div class="form__fieldset-content">
+					<Input
+						id="adres"
+						name="adres"
+						label="Adres + huisnummer"
+						placeholder="Adres"
+					/>
+
+					<div class="form__fieldset-3-1-layout">
+						<Input
+							id="province"
+							name="province"
+							label="Gemeente"
+							placeholder="Gemeente"
+						/>
+
+						<Input
+							id="postal-code"
+							name="postal-code"
+							label="Postcode"
+							placeholder="9700"
+						/>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="form__tips">
+			<Title text={tips.title.text} Tag="h2" />
+
+			<Text text={tips.text} />
+		</div>
+
+		<IconButton type="submit" label="Vraag verzenden" />
+	</form>
+</js-form>

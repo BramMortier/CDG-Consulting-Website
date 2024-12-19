@@ -24,7 +24,7 @@ interface Props {
 const { class: className, title, text, cards } = Astro.props
 ---
 
-<section class:list={["expertise", className]}>
+<section id="expertise-section" class:list={["expertise", className]}>
 	<div class="expertise__intro">
 		<Title
 			Tag="h2"

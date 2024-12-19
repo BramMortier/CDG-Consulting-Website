@@ -4,3 +4,4 @@
 import "./MobileMenuButton"
 import "./FaqList"
 import "./ReviewSlider"
+import "./Form"

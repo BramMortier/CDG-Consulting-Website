@@ -2,12 +2,28 @@
 import { DefaultLayout } from "@layouts/index"
 import { content } from "@cms/pages/contact"
 
-import { Hero } from "@blocks/body/index"
+import { Hero, Form, CallToActionSplit } from "@blocks/body/index"
 import { Container } from "@components/index"
 ---
 
 <DefaultLayout
-	title="Homepage"
-	description="This is the homepage"
-	class="home"
-/>
+	title="Contact"
+	description="This is the contact page"
+	class="contact"
+>
+	<Container>
+		<Hero title={content.hero.title} text={content.hero.text} />
+	</Container>
+
+	<Container>
+		<Form tips={content.form.tips} />
+	</Container>
+
+	<Container>
+		<CallToActionSplit
+			title={content.callToActionSplit.title}
+			image={content.callToActionSplit.image}
+			buttons={content.callToActionSplit.buttons}
+		/>
+	</Container>
+</DefaultLayout>

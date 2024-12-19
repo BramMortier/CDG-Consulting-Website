@@ -40,25 +40,27 @@ const { class: className } = Astro.props
 	<Container class="footer__bottom">
 		<div class="footer__main">
 			<div class="footer__contact">
-				<Text text={content.text} />
+				<div class="footer__contact-info">
+					<Text text={content.text} />
 
-				<ul class="footer__contact-list">
-					<li class="footer__contact-list-item">
-						<div class="footer__contact-icon">
-							<Icon name="phone" />
-						</div>
+					<ul class="footer__contact-list">
+						<li class="footer__contact-list-item">
+							<div class="footer__contact-icon">
+								<Icon name="phone" />
+							</div>
 
-						<Text text={content.phoneNumber} />
-					</li>
+							<Text text={content.phoneNumber} />
+						</li>
 
-					<li class="footer__contact-list-item">
-						<div class="footer__contact-icon">
-							<Icon name="mail" />
-						</div>
+						<li class="footer__contact-list-item">
+							<div class="footer__contact-icon">
+								<Icon name="mail" />
+							</div>
 
-						<Text text={content.email} />
-					</li>
-				</ul>
+							<Text text={content.email} />
+						</li>
+					</ul>
+				</div>
 
 				<Icon name="logo" />
 			</div>

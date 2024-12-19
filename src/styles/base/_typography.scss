@@ -128,7 +128,7 @@ p,
 
 .typo-footer-link {
 	font-family: var(--font-primary);
-	font-size: var(--fs-20);
+	font-size: clamp(var(--fs-16), 0.327vw + 0.923rem, var(--fs-20));
 	font-weight: var(--fw-400);
 	line-height: var(--lh-wide);
 	text-decoration: none;

@@ -50,14 +50,14 @@ export const content = {
 export const legalNavigation = [
 	{
 		label: "Cookie beleid",
-		href: "#"
+		href: "/legal/cookie-policy"
 	},
 	{
 		label: "Privacy beleid",
-		href: "#"
+		href: "/legal/privacy-policy"
 	},
 	{
 		label: "Algemene voorwaarden",
-		href: "#"
+		href: "/legal/terms-and-conditions"
 	}
 ]
