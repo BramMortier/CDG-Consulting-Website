@@ -11,9 +11,10 @@ interface Props {
 		label: string
 		href: string
 	}
+	list?: string[]
 }
 
-const { class: className, title, text, button } = Astro.props
+const { class: className, title, text, button, list } = Astro.props
 ---
 
 <section class:list={["call-to-action", className]}>
@@ -30,6 +31,18 @@ const { class: className, title, text, button } = Astro.props
 
 		<div class="call-to-action__card-right">
 			<Text class="c-text--subtle typo-body-large" text={text} />
+
+			{
+				list && (
+					<ol class="call-to-action__list">
+						{list.map((item) => (
+							<li class="call-to-action__list-item typo-body-large">
+								{item}
+							</li>
+						))}
+					</ol>
+				)
+			}
 		</div>
 	</div>
 </section>

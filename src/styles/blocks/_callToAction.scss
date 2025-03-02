@@ -54,6 +54,11 @@
 	}
 
 	&__card-right {
+		color: var(--scheme-contrast-subtle);
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-24);
+
 		@include styles-for(desktopS) {
 			max-width: 500px;
 		}

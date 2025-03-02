@@ -67,7 +67,13 @@ export const content = {
 		title: {
 			text: "Heb je ook een transformatie in gedachten?"
 		},
-		text: "Lorem ipsum dolor sit amet. doloremque dignissimos deserunt reprehenderit deleniti ab quisquam fuga ullam dolores ut. Aspernatur, maiores repudiandae blanditiis et molestiae numquam deleniti ab quisquam fuga ullam  ipsum dolor sit amet. doloremque dignissimos deserunt reprehenderit",
+		text: "Welke ruimte je ook wil aanpakken, keuken, badkamer, trap en trappenhal, zolder...",
+		list: [
+			"centraal aanspreekpunt",
+			"Volledige coördinatie",
+			"Begeleiding van het project",
+			"Budgetbeheersing"
+		],
 		button: {
 			label: "Ga ervoor!",
 			href: "/contact"
@@ -83,10 +89,10 @@ export const content = {
 			{ src: transformations.after_1, alt: "after image 1" }
 		],
 		subtitle: {
-			text: "Antieke restoratie",
+			text: "Optimalisatie van een bestaande keuken",
 			line: true
 		},
-		text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy amet, consetetur sadipscing elitr, sed diam nonumy "
+		text: "Het vervangen van grepen ,scharnieren ,toestellen en het schilderen of het luchtgommen wanneer de deuren bestaand uit massieve eik kunnen we de keuken een nieuwe look geven. Voor meer toelichting kan je ons steeds contacteren. De keukenruimte kan volledig aangepakt worden."
 	},
 	splitAlt: {
 		images: [
@@ -97,7 +103,7 @@ export const content = {
 			text: "Nieuw licht",
 			line: true
 		},
-		text: "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy amet, consetetur sadipscing elitr, sed diam nonumy Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eius inventore nihil. Cupiditate blanditiis dolore quia eligendi distinctio praesentium voluptate quos, rem alias aspernatur animi neque laboriosam sit assumenda ipsa dolorem esse fugit corrupti ipsam. Soluta blanditiis quos magni ex accusamus unde quam corrupti odit ipsam, vitae perspiciatis similique aperiam!"
+		text: "De verbeterde lichtopbrengst laat de ruimte schitteren. Alle details zijn belangrijk en hebben invloed op een betere werking in de keuken."
 	},
 	stack: {
 		images: [
@@ -108,7 +114,7 @@ export const content = {
 			text: "Een Productieve Upgrade",
 			line: true
 		},
-		text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae accusamus recusandae expedita minus qui, vero commodi distinctio tenetur culpa quasi? Repudiandae accusamus Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy amet, consetetur sadipscing. commodi distinctio tenetur culpa."
+		text: "De volledige remake met een eindresultaat waar elke WOW nog tekort schiet. Dat alles voor een betaalbaar budget."
 	},
 	faq: {
 		image: {
@@ -122,25 +128,7 @@ export const content = {
 		questions: [
 			{
 				question: "Wat zijn de prijzen voor jouw advies?",
-				awnser: "De prijzen hangen af van de specifieke diensten die je nodig hebt. Neem contact op voor een offerte op maat."
-			},
-			{
-				question:
-					"Moeten wij dingen voorbereiden voor je langskomt aan huis?",
-				awnser: "Het is niet verplicht, maar het is handig als je alvast ideeën, inspiratie of specifieke wensen kunt delen om het proces te versnellen."
-			},
-			{
-				question: "Kunnen we ook om kleuradvies vragen?",
-				awnser: "Ja, ik geef graag advies over kleuren die passen bij jouw ruimte, stijl en sfeer."
-			},
-			{
-				question: "Wat houdt een bezoekje van jou precies in?",
-				awnser: "Tijdens een bezoek bespreek ik je wensen en geef ik advies over inrichting, styling en mogelijke verbeteringen."
-			},
-			{
-				question:
-					"Is het mogelijk om 3D ontwerpen te maken van het interieur?",
-				awnser: "Ja, ik kan een 3D-ontwerp maken om een visueel beeld te geven van hoe het interieur eruit kan komen te zien."
+				awnser: "Wenst u een eerste kennismaking en verkenning wie we zijn en wat we doen = (250€ incl btw ) dit wordt verrekend wanneer een project wordt gerealiseerd. Het opmaken en sturen van het project wordt gerekend per uur waar een volledig rapportwordt opgemaakt. (uur tarief 65€ per uur excl btw) Opvolging en sturing van project wordt niets meer in rekening gebracht,samenwerking met de aannemer."
 			}
 		]
 	},

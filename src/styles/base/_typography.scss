@@ -133,3 +133,8 @@ p,
 	line-height: var(--lh-wide);
 	text-decoration: none;
 }
+
+ul,
+ol {
+	padding-left: var(--space-24);
+}
